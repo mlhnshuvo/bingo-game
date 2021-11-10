@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Titillium Web", sans-serif;
+  overflow-x: hidden;
+}
+
+.islandBgPirate {
+  background-image: url(../images/others/pirate.svg);
+  background-position: fixed;
+}
+
+.profileBgAcumulado {
+  background-image: url(../images/others/acumulado.png);
+  height: 420px;
+  background-position: center;
+  background-size: cover;
+}
