@@ -1,16 +1,16 @@
 import React from "react";
 import Navigation from "../components/Navigation";
-import ProfileComponent from "../components/Profile";
+import TransactionCom from "../components/Transaction";
 import Footer from "../components/Footer";
 
-const Profile = () => {
+const Transaction = () => {
   return (
     <div>
-      <Navigation login/>
-      <ProfileComponent />
+      <Navigation />
+      <TransactionCom />
       <Footer />
     </div>
   );
 };
 
-export default Profile;
+export default Transaction;

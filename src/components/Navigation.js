@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import Logo from "../assets/images/logo/logo.svg";
 
-export default function Navbar() {
+export default function Navbar({ login }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
 
   return (
@@ -29,28 +29,50 @@ export default function Navbar() {
               "lg:flex flex-grow items-center" +
               (navbarOpen ? " flex" : " hidden")
             }
-            id="example-navbar-danger"
           >
-            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-6">
-              <li className="nav-item">
-                <Link
-                  className="px-3 py-2 flex items-center uppercase font-bold leading-snug text-white hover:opacity-75"
-                  to="/login"
-                >
-                  <i className="fas fa-running text-lg leading-lg text-white opacity-75"></i>
-                  <span className="ml-2">to enter</span>
-                </Link>
-              </li>
-              <li className="nav-item bg-yellow-500 rounded">
-                <Link
-                  className="px-3 py-2 flex items-center uppercase font-bold leading-snug text-black hover:opacity-75"
-                  to="/register"
-                >
-                  <i className="fas fa-registered text-lg leading-lg text-black opacity-75"></i>
-                  <span className="ml-2">register</span>
-                </Link>
-              </li>
-            </ul>
+            {login ? (
+              <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-6">
+                <li className="nav-item bg-yellow-500 rounded">
+                  <Link
+                    className="px-3 py-2 flex items-center uppercase font-bold leading-snug text-black hover:opacity-75"
+                    to="/profile"
+                  >
+                    <i className="fas fa-user-circle text-lg leading-lg text-black opacity-75"></i>
+                    <span className="ml-2">Isabelly</span>
+                  </Link>
+                </li>
+                <li className="nav-item bg-yellow-500 rounded">
+                  <Link
+                    className="px-3 py-2 flex items-center uppercase font-bold leading-snug text-black hover:opacity-75"
+                    to="/login"
+                  >
+                    <i className="fas fa-sign-out-alt text-lg leading-lg text-black opacity-75"></i>
+                    <span className="ml-2">Sign out</span>
+                  </Link>
+                </li>
+              </ul>
+            ) : (
+              <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-6">
+                <li className="nav-item border border-gray-500 rounded">
+                  <Link
+                    className="px-3 py-2 flex items-center uppercase font-bold leading-snug text-white hover:opacity-75"
+                    to="/login"
+                  >
+                    <i className="fas fa-running text-lg leading-lg text-white opacity-75"></i>
+                    <span className="ml-2">to enter</span>
+                  </Link>
+                </li>
+                <li className="nav-item bg-yellow-500 rounded">
+                  <Link
+                    className="px-3 py-2 flex items-center uppercase font-bold leading-snug text-black hover:opacity-75"
+                    to="/register"
+                  >
+                    <i className="fas fa-registered text-lg leading-lg text-black opacity-75"></i>
+                    <span className="ml-2">register</span>
+                  </Link>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
       </nav>

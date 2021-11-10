@@ -9,6 +9,7 @@ import Game from "../pages/Game";
 import SiteRules from "../pages/SiteRules";
 import TermOfUse from "../pages/TermOfUse";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
+import Transaction from "../pages/Transaction";
 import { Router } from "@reach/router";
 
 const Routers = () => {
@@ -24,6 +25,7 @@ const Routers = () => {
       <SiteRules path="/siterules" />
       <TermOfUse path="/termofuse" />
       <PrivacyPolicy path="/privacypolicy" />
+      <Transaction path="/transaction" />
     </Router>
   );
 };

@@ -5,21 +5,24 @@ const SiteRules = () => {
     <div className="w-2/3 m-auto my-20 p-10 bg-yellow-400">
       <p className="text-3xl my-10">Site rules</p>
       <p>
-        1. Introduction The. By using the Bingolar website or any of its
+        1. Introduction 
+        A. The. By using the Bingolar website or any of its
         subdomains or applications, the user agrees to comply with all the
         general conditions mentioned in this document and in the Responsible
         Gaming, Legislation, Security and Privacy and regulation sections of
-        each particular promotion. B. Bingolar may make changes to the rules at
+        each particular promotion.<br/> 
+        B. Bingolar may make changes to the rules at
         any time and without prior notice, as it sees fit. We suggest that you
-        frequently review the regulation for your own knowledge and update. ç.
+        frequently review the regulation for your own knowledge and update. <br/> 
+        ç.
         The user authorizes Bingolar to provide their data to duly authorized
         business partners, so that they can provide their services. Business
-        partners must accept our privacy policy through contractual commitment.
+        partners must accept our privacy policy through contractual commitment.<br/> 
         d. The data provided to the Bingolar website will be registered in our
         database, and it is possible to update it at any time, including after
         closing the account. and. References to “you”, “user”, or “customer”
         refer to anyone using the Bingolar website, its subdomains or
-        applications. f. Bingolar.tv is operated by Maxxi Media NV. Maxxi Media
+        applications. <br/> f. Bingolar.tv is operated by Maxxi Media NV. Maxxi Media
         NV. is a member of the CIGA Curaçao Internet Gaming Association, which
         sets the requirements for the Gambling License. The Gambling License
         Number is: 8048/JAZ. 2. Registration The. The use of the Bingolar
@@ -43,11 +46,11 @@ const SiteRules = () => {
         Macedonia, Moldova, Montenegro, Poland, Kyrgyzstan, United Kingdom,
         Czech Republic, Romania, Russia, Serbia, Sudan, Tajikistan ,
         Turkmenistan, Turkey, Ukraine, Uruguay and Uzbekistan, by legal
-        provision of the mentioned countries. g. Each user is responsible for
+        provision of the mentioned countries. <br/> g. Each user is responsible for
         their login, password and use of their account. Bingolar does not have a
-        list of usernames and passwords. H. If a user loses, forgets or for some
+        list of usernames and passwords. <br/> H. If a user loses, forgets or for some
         other reason is unable to access the system, Bingolar will not be
-        responsible, but may suggest that the customer recover their password.
+        responsible, but may suggest that the customer recover their password.<br/> 
         i. If a user shares their access data with other people, the account
         owner will be responsible for their actions and consequences. Bingolar
         is not responsible for possible damages. 3. User Considerations The.
@@ -71,7 +74,7 @@ const SiteRules = () => {
         prior notice. B. If the user wishes to close their account of their own
         free will, they must send an email to cliente@bingolar.tv, informing the
         reason and the details of the account to be closed: full name, address
-        and number. ç. Bingolar strictly respects the responsible gaming policy.
+        and number. <br/> ç. Bingolar strictly respects the responsible gaming policy.
         If insane behavior is detected, which is not compatible with this
         policy, the account may be canceled or preventive measures taken. d. The
         user accepts that, even after closing his account, the information
@@ -82,7 +85,7 @@ const SiteRules = () => {
         transactions with the required security. Each payment processor sets its
         deadlines and rules for transactions. Bingolar is not responsible for
         these deadlines and rules or for any delay that may be generated during
-        this process. d. Deposits identified or suspected of any type of fraud
+        this process. <br/> d. Deposits identified or suspected of any type of fraud
         will not be accepted, or even reversed. All earnings from this type of
         procedure will be canceled unconditionally, and the user's account may
         suffer restrictions and even cancellation. 6. System errors The. Any

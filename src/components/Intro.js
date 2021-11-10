@@ -7,10 +7,10 @@ import Video from "../assets/images/others/video.png";
 const Intro = () => {
   return (
     <div className="bg-gray-900 text-white">
-      <div className="flex flex-wrap lg:flex-nowrap py-10 w-2/3 m-auto justify-between items-center">
-        <div className="w-2/4">
-          <img src={Logo} alt="" />
-          <p className="text-2xl md:text-5xl py-16">
+      <div className="flex flex-wrap lg:flex-nowrap pb-10 md:pt-10 w-2/3 m-auto justify-between items-center">
+        <div className="w-full lg:w-2/4">
+          <img src={Logo} alt="" className="hidden lg:block"/>
+          <p className="text-2xl md:text-5xl py-5 md:py-16">
             Play bingo live on the best platform in Brazil
           </p>
           <Link to="/register">
@@ -18,7 +18,7 @@ const Intro = () => {
             MAKE YOUR REGISTRATION
           </button>
           </Link>
-          <div className="flex gap-4 my-20">
+          <div className="flex gap-4 md:my-20 my-5">
             
               <img src={Flag} alt=""/>
           

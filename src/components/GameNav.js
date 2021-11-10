@@ -4,21 +4,26 @@ import { Link } from "@reach/router";
 const GameNav = () => {
   return (
     <div className="bg-gray-900 border-b border-gray-500 text-center">
-      <div className="flex items-center justify-between flex-wrap">
+      <div className="flex items-center justify-items-center flex-wrap">
         <div className="border-r border-gray-500 text-white">
-          <p className="bg-gray-100 px-20 text-gray-900">UMA LINHA</p>
+          <p className="bg-gray-100 px-16 text-gray-900">UMA LINHA</p>
           <p>R$ 23,32</p>
         </div>
         <div className="border-r border-gray-500 text-white">
-          <p className="bg-gray-100 px-20 text-gray-900">UMA LINHA</p>
+          <p className="bg-gray-100 px-16 text-gray-900">UMA LINHA</p>
           <p>R$ 23,32</p>
         </div>
         <div className="border-r border-gray-500 text-white">
-          <p className="bg-gray-100 px-20 text-gray-900">UMA LINHA</p>
+          <p className="bg-gray-100 px-16 text-gray-900">UMA LINHA</p>
           <p>R$ 23,32</p>
         </div>
         <div className="border-r border-gray-500 text-white">
-          <p className="bg-gray-100 px-20 text-gray-900">UMA LINHA</p>
+          <p className="bg-gray-100 px-16 text-gray-900">UMA LINHA</p>
+          <p>R$ 23,32</p>
+        </div>
+        
+        <div className="border-r border-gray-500 text-white">
+          <p className="bg-gray-100 px-16 text-gray-900">UMA LINHA</p>
           <p>R$ 23,32</p>
         </div>
         <div className="border-r border-gray-500 text-white">
@@ -29,7 +34,7 @@ const GameNav = () => {
         </div>
         <div className="border-r border-gray-500 text-white">
           <Link to="/profile">
-            <p className="px-20 font-extrabold">X</p>
+            <p className="px-16 font-extrabold">X</p>
           </Link>
         </div>
       </div>

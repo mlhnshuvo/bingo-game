@@ -13,6 +13,6 @@ body {
 .profileBgAcumulado {
   background-image: url(../images/others/acumulado.png);
   height: 420px;
-  background-position: center;
+  background-position: fixed;
   background-size: cover;
 }

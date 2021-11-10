@@ -5,7 +5,8 @@ const TermOfUse = () => {
     <div className="w-2/3 m-auto my-20 bg-yellow-400 p-10">
       <p className="text-3xl my-10">Website Terms of Use</p>
       <p>
-        Version 1.0 The Bingolar website located at http://bingolar.tv is a
+        Version 1.0 
+        <br/> The Bingolar website located at http://bingolar.tv is a
         copyrighted work belonging to Bingolar. Certain features of the Site may
         be subject to additional guidelines, terms, or rules, which will be
         posted on the Site in connection with such features. All such additional
@@ -42,10 +43,11 @@ const TermOfUse = () => {
         Content that you may provide, you are aware that all the intellectual
         property rights, including copyrights, patents, trademarks, and trade
         secrets, in the Site and its content are owned by Company or Company’s
-        suppliers. Note that these Terms and access to the Site do not give you
+        suppliers. Note that these Terms and access to the Site 
+        <br/> do not give you
         any rights, title or interest in or to any intellectual property rights,
         except for the limited access rights expressed in Section 2.1. Company
-        and its suppliers reserve all rights not granted in these Terms.
+        and its suppliers reserve all rights not granted in these Terms.<br/>
         Third-Party Links & Ads; Other Users Third-Party Links & Ads. The Site
         may contain links to third-party websites and services, and/or display
         advertisements for third-parties. Such Third- Party Links & Ads are not
@@ -81,7 +83,7 @@ const TermOfUse = () => {
         and the pages on the website that the visitor accessed or visited. The
         information is used to optimize the users’ experience by customizing our
         web page content based on visitors’ browser type and/or other
-        information. Disclaimers The site is provided on an "as-is" and "as
+        information.<br/> Disclaimers The site is provided on an "as-is" and "as
         available" basis, and company and our suppliers expressly disclaim any
         and all warranties and conditions of any kind, whether express, implied,
         or statutory, including all warranties or conditions of merchantability,
@@ -96,7 +98,7 @@ const TermOfUse = () => {
         implied warranties, so the above exclusion may not apply to you. Some
         jurisdictions do not allow limitations on how long an implied warranty
         lasts, so the above limitation may not apply to you. Limitation on
-        Liability To the maximum extent permitted by law, in no event shall
+        Liability<br/> To the maximum extent permitted by law, in no event shall
         company or our suppliers be liable to you or any third-party for any
         lost profits, lost data, costs of procurement of substitute products, or
         any indirect, consequential, exemplary, incidental, special or punitive

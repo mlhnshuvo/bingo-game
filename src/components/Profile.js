@@ -5,8 +5,8 @@ const Profile = () => {
   return (
     <div className="bg-gray-800 text-white pt-5 pb-32">
       <div className="w-2/3 m-auto">
-        <div className="flex gap-4 justify-between flex-wrap">
-          <ul className="flex gap-5 flex-wrap">
+        <div className="flex gap-4 sm:justify-between justify-center flex-wrap">
+          <ul className="flex gap-1 sm:gap-5 sm:flex-wrap">
             <li className="flex items-center gap-2 cursor-pointer font-bold text-lg border-b-2 border-yellow-500">
               <i className="fas fa-play-circle text-yellow-500"></i>
               <p>Play Bingo</p>
@@ -24,7 +24,7 @@ const Profile = () => {
             <p>Your balance</p>
             <p className="text-xl">BRL 0.00</p>
           </div>
-          <ul className="flex gap-5 flex-wrap">
+          <ul className="flex sm:gap-5 gap-2">
             <li>
               <Link to="/withdraw">
                 <button className="py-2 w-full rounded px-5 border-2 border-gray-500">
@@ -52,8 +52,11 @@ const Profile = () => {
               <p className="text-2xl md:text-7xl mt-5">BRL 6,562.98</p>
             </div>
           </div>
-         <Link to="/game">
-         <button className="bg-yellow-500 p-4 w-full text-black rounded">PLAY</button></Link>
+          <Link to="/game">
+            <button className="bg-yellow-500 p-4 w-full text-black rounded">
+              PLAY
+            </button>
+          </Link>
         </div>
       </div>
     </div>
