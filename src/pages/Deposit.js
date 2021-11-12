@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 const Withdraw = () => {
   return (
     <div>
-      <Navigation />
+      <Navigation login/>
       <Deposit />
       <Footer />
     </div>

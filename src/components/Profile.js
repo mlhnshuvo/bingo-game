@@ -1,21 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
+import PlayBingo from "./PlayBingo";
+import Transaction from "./Transaction";
+import UpdateProfile from "./UpdateProfile";
 import { Link } from "@reach/router";
 
 const Profile = () => {
+  const [state, setState] = useState("playBingo");
+
   return (
     <div className="bg-gray-800 text-white pt-5 pb-32">
       <div className="w-2/3 m-auto">
         <div className="flex gap-4 sm:justify-between justify-center flex-wrap">
           <ul className="flex gap-1 sm:gap-5 sm:flex-wrap">
-            <li className="flex items-center gap-2 cursor-pointer font-bold text-lg border-b-2 border-yellow-500">
+            <li
+              className={
+                state === "playBingo"
+                  ? "flex items-center gap-2 cursor-pointer font-bold text-lg border-b-2 border-yellow-500"
+                  : "flex items-center gap-2 cursor-pointer font-bold text-lg"
+              }
+              onClick={() => setState("playBingo")}
+            >
               <i className="fas fa-play-circle text-yellow-500"></i>
               <p>Play Bingo</p>
             </li>
-            <li className="flex items-center gap-2 cursor-pointer font-bold text-lg">
+            <li
+              className={
+                state === "myTran"
+                  ? "flex items-center gap-2 cursor-pointer font-bold text-lg border-b-2 border-yellow-500"
+                  : "flex items-center gap-2 cursor-pointer font-bold text-lg"
+              }
+              onClick={() => setState("myTran")}
+            >
               <i className="fas fa-money-bill-alt text-yellow-500"></i>
               <p>My transaction</p>
             </li>
-            <li className="flex items-center gap-2 cursor-pointer font-bold text-lg">
+            <li
+              className={
+                state === "myData"
+                  ? "flex items-center gap-2 cursor-pointer font-bold text-lg border-b-2 border-yellow-500"
+                  : "flex items-center gap-2 cursor-pointer font-bold text-lg"
+              }
+              onClick={() => setState("myData")}
+            >
               <i className="fas fa-id-card text-yellow-500"></i>
               <p>My data</p>
             </li>
@@ -41,23 +67,9 @@ const Profile = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <p className="text-center text-yellow-500 text-4xl my-14">
-            Play bingo live now!
-          </p>
-          <div className="profileBgAcumulado">
-            <div className="text-center py-32 text-yellow-500">
-              <p className="text-xl md:text-3xl">AWARD</p>
-              <p className="text-2xl md:text-4xl">ACCUMULATED</p>
-              <p className="text-2xl md:text-7xl mt-5">BRL 6,562.98</p>
-            </div>
-          </div>
-          <Link to="/game">
-            <button className="bg-yellow-500 p-4 w-full text-black rounded">
-              PLAY
-            </button>
-          </Link>
-        </div>
+        {state === "playBingo" && <PlayBingo />}
+        {state === "myTran" && <Transaction />}
+        {state === "myData" && <UpdateProfile />}
       </div>
     </div>
   );

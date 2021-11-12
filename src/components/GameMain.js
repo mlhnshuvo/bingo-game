@@ -1,48 +1,80 @@
-import React from "react";
-import GameVideo from "../assets/images/others/video.png";
+import React, { useState, useEffect } from "react";
 import CartNumber from "./CartNumber";
+import gameCardData from "./GameCardData";
+import CartController from "./CartController";
 
 const GameMain = () => {
+  const [state, setState] = useState(gameCardData);
+  const [count, setCount] = useState(0);
+
+  const selectHandler = (id) => {
+    const temp = [...state];
+    if (temp.length >= id) {
+      const findCart = temp.find((el) => el.id === id);
+      findCart.select = !findCart.select;
+      setState(temp);
+    }
+  };
+
+  const countHandler = (value) => {
+    const temp = [...state];
+    for (let i = 0; i < temp.length; i++) {
+      temp[i].select = false;
+    }
+    if (temp.length >= value) {
+      for (let i = 0; i < value; i++) {
+        temp[i].select = true;
+      }
+      setState(temp);
+    }
+  };
+
+  const clearController = () => {
+    const temp = [...state];
+    for (let i = 0; i < temp.length; i++) {
+      temp[i].select = false;
+    }
+    setState(temp);
+  };
+
+  const allSelectController = () => {
+    const temp = [...state];
+    for (let i = 0; i < temp.length; i++) {
+      temp[i].select = true;
+    }
+    setState(temp);
+  };
+
+  useEffect(() => {
+    let cnt = 0;
+    const temp = [...state];
+    temp.forEach((el) => {
+      if (el.select === true) {
+        cnt++;
+      }
+    });
+    setCount(cnt);
+  }, [state]);
+
   return (
     <div>
       <div className="flex md:flex-nowrap flex-wrap">
-        <div>
-          <img src={GameVideo} alt="" className="h-full" />
-        </div>
+        <iframe
+          src="https://www.youtube.com/embed/cqOqpU7m7KE"
+          title="Video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="w-full"
+        ></iframe>
         <div className="h-auto">
-          <CartNumber />
-          <div className="text-white bg-gray-500 p-2">
-            <div className="flex items-center gap-2 flex-wrap justify-center">
-              <div className="flex items-center justify-center text-center rounded">
-                <p>Cartela </p>
-                <p> R$ 1,00</p>
-              </div>
-              <div className="border border-gray-300 w-8 flex items-center justify-center h-8 text-center rounded cursor-pointer">
-                <p> +5</p>
-              </div>
-              <div className="border border-gray-300 w-8 flex items-center justify-center h-8 text-center rounded cursor-pointer">
-                <p> +20</p>
-              </div>
-              <div className="border border-gray-300 w-8 flex items-center justify-center h-8 text-center rounded cursor-pointer text-xs">
-                <div>
-                  <p>Max</p>
-                  <p>96</p>
-                </div>
-              </div>
-              <div className="bg-red-700 w-8 flex items-center justify-center h-8 text-center rounded cursor-pointer">
-                <p>X</p>
-              </div>
-              <div className="border border-gray-300 w-8 flex items-center justify-center h-8 text-center rounded cursor-pointer">
-                <p>-</p>
-              </div>
-              <div className="border border-gray-300 w-8 flex items-center justify-center h-8 text-center rounded">
-                <p>0</p>
-              </div>
-              <div className="border border-gray-300 w-8 flex items-center justify-center h-8 text-center rounded cursor-pointer">
-                <p>+</p>
-              </div>
-            </div>
-          </div>
+          <CartNumber state={state} selectHandler={selectHandler} />
+          <CartController
+            countHandler={countHandler}
+            count={count}
+            clearController={clearController}
+            allSelectController={allSelectController}
+          />
         </div>
       </div>
     </div>

@@ -1,21 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 
 const DiscoverAward = () => {
+  const [state, setState] = useState("first");
+
   return (
-    <div className="">
+    <div>
       <div className="w-2/3 m-auto mt-10">
         <p className="text-center text-4xl mb-5">Discover the awards</p>
         <div className="text-center">
-          <button className="bg-yellow-500 rounded-full px-5 py-1 mx-4 my-2">
+          <button
+            className={
+              state === "first"
+                ? "bg-yellow-500 rounded-full px-5 py-1 mx-4 my-2"
+                : "bg-gray-200 rounded-full px-5 py-1 mx-4 my-2"
+            }
+            onClick={() => setState("first")}
+          >
             MONDAY, TUESDAY AND WEDNESDAY
           </button>
-          <button className="bg-gray-200 rounded-full px-5 py-1 mx-4 my-2">
+          <button
+            className={
+              state === "second"
+                ? "bg-yellow-500 rounded-full px-5 py-1 mx-4 my-2"
+                : "bg-gray-200 rounded-full px-5 py-1 mx-4 my-2"
+            }
+            onClick={() => setState("second")}
+          >
             TUESDAY
           </button>
-          <button className="bg-gray-200 rounded-full px-5 py-1 mx-4 my-2">
+          <button
+            className={
+              state === "third"
+                ? "bg-yellow-500 rounded-full px-5 py-1 mx-4 my-2"
+                : "bg-gray-200 rounded-full px-5 py-1 mx-4 my-2"
+            }
+            onClick={() => setState("third")}
+          >
             FRIDAY, SATURDAY
           </button>
-          <button className="bg-gray-200 rounded-full px-5 py-1 mx-4 my-2">
+          <button
+            className={
+              state === "fourth"
+                ? "bg-yellow-500 rounded-full px-5 py-1 mx-4 my-2"
+                : "bg-gray-200 rounded-full px-5 py-1 mx-4 my-2"
+            }
+            onClick={() => setState("fourth")}
+          >
             SUNDAY
           </button>
         </div>
