@@ -54,7 +54,7 @@ const Modal = ({ open, submitting, openModal }) => {
         focus:outline-none
       "
               >
-                <h3 class="text-xl px-4 py-5 text-center font-semibold">
+                <h3 class="text-xl px-4 mt-8 text-center font-semibold">
                   Are you sure you want to buy these cards?
                 </h3>
                 <div
@@ -62,7 +62,7 @@ const Modal = ({ open, submitting, openModal }) => {
           flex
           items-start
           justify-between
-          p-5
+          p-10
           border-b border-solid border-gray-200
           rounded-t
         "

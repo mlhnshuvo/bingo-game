@@ -17,3 +17,8 @@ export const buyCard = (cardData) => (dispatch) => {
       });
     });
 };
+
+export const getCard = () => (dispatch) => {
+  axios.get('/card/get')
+  
+};
