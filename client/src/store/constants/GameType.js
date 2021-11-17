@@ -1,0 +1,2 @@
+export const SUBMIT_CARD = "SUBMIT_CARD";
+export const SUBMIT_CARD_ERROR = "SUBMIT_CARD_ERROR";

@@ -1,7 +1,7 @@
 const gameCardData = [
   {
     id: 1,
-    select: false,
+    buy: false,
     number: [
       "",
       "",
@@ -34,7 +34,7 @@ const gameCardData = [
   },
   {
     id: 2,
-    select: false,
+    buy: false,
     number: [
       "",
       "14",
@@ -67,7 +67,7 @@ const gameCardData = [
   },
   {
     id: 3,
-    select: false,
+    buy: false,
     number: [
       "",
       "",
@@ -100,7 +100,7 @@ const gameCardData = [
   },
   {
     id: 4,
-    select: false,
+    buy: false,
     number: [
       "",
       "14",
@@ -133,7 +133,7 @@ const gameCardData = [
   },
   {
     id: 5,
-    select: false,
+    buy: false,
     number: [
       "",
       "",
@@ -166,7 +166,7 @@ const gameCardData = [
   },
   {
     id: 6,
-    select: false,
+    buy: false,
     number: [
       "",
       "14",

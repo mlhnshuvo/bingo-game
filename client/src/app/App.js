@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Router from "./Router";
+import Tostify from "../components/Tostify";
+import { useDispatch } from "react-redux";
+import { isAuthenticate } from "../store/action/userAction";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(isAuthenticate());
+  }, [dispatch]);
+
   return (
     <div>
       <Helmet>
@@ -21,6 +30,7 @@ const App = () => {
         />
       </Helmet>
       <Router />
+      <Tostify />
     </div>
   );
 };

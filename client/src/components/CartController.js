@@ -4,10 +4,11 @@ const CartController = ({
   countHandler,
   count,
   clearController,
-  allSelectController
+  allSelectController,
+  openModal
 }) => {
   return (
-    <div className="text-white bg-gray-500 p-2">
+    <div className="text-white bg-gray-500 p-2 md:w-72">
       <div className="flex items-center gap-2 flex-wrap justify-center">
         <div className="flex items-center justify-center text-center rounded">
           <p>Cartela </p>
@@ -54,6 +55,12 @@ const CartController = ({
         >
           <p>+</p>
         </div>
+        <button
+          className="bg-yellow-400 py-1 px-2 rounded text-black hover:text-white hover:bg-yellow-600"
+          onClick={openModal}
+        >
+          COMPARE
+        </button>
       </div>
     </div>
   );

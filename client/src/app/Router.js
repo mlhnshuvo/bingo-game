@@ -1,4 +1,5 @@
 import React from "react";
+import ProtectRoute from "./ProtectRoute";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -18,14 +19,14 @@ const Routers = () => {
       <Home path="/" />
       <Login path="/login" />
       <Register path="/register" />
-      <Profile path="/profile" />
-      <Withdraw path="/withdraw" />
-      <Deposit path="/deposit" />
-      <Game path="/game" />
       <SiteRules path="/siterules" />
       <TermOfUse path="/termofuse" />
       <PrivacyPolicy path="/privacypolicy" />
-      <Transaction path="/transaction" />
+      <ProtectRoute component={Profile} path="/profile" />
+      <ProtectRoute component={Withdraw} path="/withdraw" />
+      <ProtectRoute component={Deposit} path="/deposit" />
+      <ProtectRoute component={Game} path="/game" />
+      <ProtectRoute component={Transaction} path="/transaction" />
     </Router>
   );
 };

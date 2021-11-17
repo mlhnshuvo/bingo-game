@@ -11,13 +11,16 @@ const registerValidation = (value) => {
     error.password = "Please provide maximum 20 character";
   }
   if (!value.fullName) {
-    error.agree = "Please checked agree button";
+    error.fullName = "Please provide your full name";
   }
   if (!value.cpf) {
-    error.agree = "Please checked agree button";
+    error.cpf = "Please provide cpf information";
   }
   if (!value.telePhone) {
-    error.agree = "Please checked agree button";
+    error.telePhone = "Please provide your telephone number";
+  }
+  if (!value.invitationCode) {
+    error.invitationCode = "Please provide your invitation code number";
   }
   let isValid = Object.keys(error).length === 0;
   return {

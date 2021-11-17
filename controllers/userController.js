@@ -8,13 +8,14 @@ const {
 } = require("../middlewares/userValidation");
 
 const register = (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, fullName, cpf, telePhone, invitationCode } = req.body;
   const validation = registerValidation({
     email,
     password,
     fullName,
     cpf,
     telePhone,
+    invitationCode
   });
   const username = email.substring(0, email.lastIndexOf("@"));
   if (validation.isValid) {
@@ -28,10 +29,11 @@ const register = (req, res) => {
               const user = {
                 email,
                 username,
-                password,
+                password: hash,
                 fullName,
                 cpf,
                 telePhone,
+                invitationCode
               };
               new User(user)
                 .save()
@@ -105,111 +107,7 @@ const login = (req, res) => {
   }
 };
 
-const getUser = (req, res) => {
-  User.find()
-    .select("-password")
-    .then((response) => {
-      res.status(200).json(response);
-    })
-    .catch(() => {
-      serverError(res);
-    });
-};
-
-const getMyAccount = (req, res) => {
-  const { email } = req.user;
-  User.findOne({ email: email })
-    .select("-password")
-    .then((response) => {
-      res.status(200).json(response);
-    })
-    .catch(() => {
-      serverError(res);
-    });
-};
-
-const updateUser = (req, res) => {
-  const { firstName, lastName, phone, currentPassword, newPassword } = req.body;
-  if (currentPassword && newPassword) {
-    User.findOne({ _id: req.user._id })
-      .then((responseOne) => {
-        bcrypt.compare(
-          currentPassword,
-          responseOne.password,
-          function (error, result) {
-            if (result) {
-              bcrypt.hash(newPassword, 10, function (err, hash) {
-                if (hash) {
-                  const updateWithPass = {
-                    firstName,
-                    lastName,
-                    phone,
-                    password: hash,
-                  };
-                  User.findOneAndUpdate({ _id: req.user._id }, updateWithPass, {
-                    new: true,
-                  })
-                    .select("-password")
-                    .then((response) => {
-                      res.status(200).json(response);
-                    })
-                    .catch(() => {
-                      serverError(res);
-                    });
-                }
-                if (err) {
-                  serverError(res);
-                }
-              });
-            } else {
-              res.status(400).json({
-                message: "Password doesn't match!",
-              });
-            }
-            if (error) {
-              serverError(res);
-            }
-          }
-        );
-      })
-      .catch(() => {
-        serverError(res);
-      });
-  } else {
-    const updateUser = {
-      firstName,
-      lastName,
-      phone,
-    };
-    User.findOneAndUpdate({ _id: req.user._id }, updateUser, {
-      new: true,
-    })
-      .select("-password")
-      .then((response) => {
-        res.status(200).json(response);
-      })
-      .catch(() => {
-        serverError(res);
-      });
-  }
-};
-
-const deleteUser = (req, res) => {
-  const id = req.params.id;
-  User.findOneAndRemove({ _id: id })
-    .then((response) => {
-      res.status(200).json(response);
-    })
-    .catch(() => {
-      serverError(res);
-    });
-};
-
 module.exports = {
   register,
-  login,
-  getUser,
-  getMyAccount,
-  updateUser,
-  deleteUser,
+  login
 };

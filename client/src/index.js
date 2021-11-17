@@ -3,12 +3,20 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./app/App";
 import "./assets/css/style.css";
+import { Provider } from "react-redux";
+import store from "./store";
 import reportWebVitals from "./reportWebVitals";
+import setAuthToken from "./utils/setAuthToken";
+
+const token = localStorage.getItem("token");
+if (token) {
+  setAuthToken(token);
+}
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
 

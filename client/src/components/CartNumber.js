@@ -12,7 +12,7 @@ const CartNumber = ({ state, selectHandler }) => {
           {el.number.map((num) => (
             <p
               className={
-                el.select
+                el.buy
                   ? num
                     ? "bg-yellow-300 font-bold border border-gray-900 w-8 h-8 text-black p-1"
                     : "bg-yellow-300 font-bold border border-gray-900 w-8 h-8 text-black p-1"
