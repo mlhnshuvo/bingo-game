@@ -21,7 +21,6 @@ export const buyCard = (cardData) => (dispatch) => {
 export const getCard = () => (dispatch) => {
   axios.get('/card/get')
   .then((response) => {
-    console.log(response.data);
     dispatch({
       type: Types.GET_CARD,
       payload: response.data

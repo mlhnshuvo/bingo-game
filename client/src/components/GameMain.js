@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { buyCard } from "../store/action/gameCardAction";
+import { getCardNumber } from "../store/action/numberAction";
 import CartNumber from "./CartNumber";
 import CartController from "./CartController";
 import Modal from "./Modal";
@@ -61,6 +62,10 @@ const GameMain = () => {
     });
     setCount(cnt);
   }, [state]);
+
+  useEffect(() => {
+    dispatch(getCardNumber());
+  }, [dispatch]);
 
   const openModal = () => {
     const temp = [...state];

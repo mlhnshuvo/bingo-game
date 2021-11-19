@@ -37,7 +37,6 @@ export const userLogin = (user, navigate) => (dispatch) => {
   axios
     .post("/user/login", user)
     .then((response) => {
-      console.log(response);
       var decoded = jwt_decode(response.data.token);
       dispatch({
         type: Types.LOGIN_USER,

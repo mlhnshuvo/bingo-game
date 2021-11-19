@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "@reach/router";
-import { deleteNumber, addNumber } from "../store/action/numberAction";
+import {
+  deleteNumber,
+  addNumber,
+  getCardNumber,
+} from "../store/action/numberAction";
 
 const AdminPage = () => {
   const [inputValue, setInputValue] = useState({ number: "" });
   const state = useSelector((state) => state.cardNumberReducer.card);
   const dispatch = useDispatch();
 
-  const reverseNumber = [...state]
+  useEffect(() => {
+    dispatch(getCardNumber());
+  }, [dispatch]);
+
+  const reverseNumber = [...state];
 
   return (
     <div className="m-auto sm:w-2/4 w-11/12 mt-10">
