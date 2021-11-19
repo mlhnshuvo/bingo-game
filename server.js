@@ -6,6 +6,7 @@ const db = require("./config/db");
 
 const userRouter = require("./routers/userRouter");
 const cardRouter = require("./routers/cardRouter");
+const inputRouter = require("./routers/inputRouter");
 
 const app = express();
 app.use(express.json());
@@ -14,6 +15,7 @@ app.use(morgan("dev"));
 
 app.use("/user", userRouter);
 app.use("/card", cardRouter);
+app.use("/number", inputRouter);
 
 app.get("/", (req, res) => {
   res.send("A MERN stack bingo game");

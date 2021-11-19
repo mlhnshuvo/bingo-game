@@ -7,7 +7,6 @@ const selectCard = (req, res) => {
     authorId: req.user._id,
     card: cardData,
   };
-  console.log(cardData);
   new Card(card)
     .save()
     .then((response) => {
@@ -20,8 +19,8 @@ const selectCard = (req, res) => {
 
 const getCardData = (req, res) => {
   Card.find()
+    .populate("authorId")
     .then((response) => {
-      console.log(response);
       res.status(200).send(response);
     })
     .catch(() => {

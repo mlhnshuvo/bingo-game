@@ -11,6 +11,8 @@ import SiteRules from "../pages/SiteRules";
 import TermOfUse from "../pages/TermOfUse";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Transaction from "../pages/Transaction";
+import AdminPage from "../pages/Admin";
+import WhoBuyCard from "../pages/WhoBuyCard";
 import { Router } from "@reach/router";
 
 const Routers = () => {
@@ -27,6 +29,8 @@ const Routers = () => {
       <ProtectRoute component={Deposit} path="/deposit" />
       <ProtectRoute component={Game} path="/game" />
       <ProtectRoute component={Transaction} path="/transaction" />
+      <ProtectRoute component={AdminPage} path="/admin" />
+      <ProtectRoute component={WhoBuyCard} path="/buycard" />
     </Router>
   );
 };

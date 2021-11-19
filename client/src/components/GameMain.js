@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { buyCard } from "../store/action/gameCardAction";
 import CartNumber from "./CartNumber";
-import gameCardData from "./GameCardData";
 import CartController from "./CartController";
 import Modal from "./Modal";
 
 const GameMain = () => {
-  const [state, setState] = useState(gameCardData);
+  const cardNumberReducer = useSelector((state) => state.cardNumberReducer);
+  const [state, setState] = useState(cardNumberReducer.card);
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
 

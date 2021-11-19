@@ -37,6 +37,19 @@ export default function Navbar() {
           >
             {userReducer.isAuthenticate ? (
               <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-6">
+                {userReducer.user &&
+                  userReducer.user.username.toLowerCase() === "unicoder11" && (
+                    <li className="nav-item bg-yellow-500 rounded">
+                      <Link
+                        className="px-3 py-2 flex items-center uppercase font-bold leading-snug text-black hover:opacity-75"
+                        to="/admin"
+                      >
+                        <i className="fas fa-user-circle text-lg leading-lg text-black opacity-75"></i>
+                        <span className="ml-2">Admin</span>
+                      </Link>
+                    </li>
+                  )}
+
                 <li className="nav-item bg-yellow-500 rounded">
                   <Link
                     className="px-3 py-2 flex items-center uppercase font-bold leading-snug text-black hover:opacity-75"

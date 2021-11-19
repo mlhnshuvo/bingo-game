@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import userReducer from "./reducers/userReducer";
 import gameCardReducer from "./reducers/gameCardReducer";
+import cardNumberReducer from "./reducers/cardNumberReducer";
 import alertReducer from "./reducers/alertReducer";
 import thunk from "redux-thunk";
 
@@ -12,6 +13,7 @@ const composedEnhancers = composeWithDevTools(...enhancers);
 const rootReducer = combineReducers({
   userReducer,
   gameCardReducer,
+  cardNumberReducer,
   alertReducer,
 });
 

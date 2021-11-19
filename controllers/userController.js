@@ -95,7 +95,7 @@ const login = (req, res) => {
           });
         } else {
           res.status(400).json({
-            message: "User not found!",
+            message: "User not found. Please register now!",
           });
         }
       })

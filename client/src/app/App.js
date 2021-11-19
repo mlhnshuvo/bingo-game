@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { getCardNumber } from "../store/action/numberAction";
 import Router from "./Router";
 import Tostify from "../components/Tostify";
 import { useDispatch } from "react-redux";
@@ -10,6 +11,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(isAuthenticate());
+    dispatch(getCardNumber());
   }, [dispatch]);
 
   return (
