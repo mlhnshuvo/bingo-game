@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getCardNumber } from "../store/action/numberAction";
 import PlayBingo from "./PlayBingo";
 import Transaction from "./Transaction";
 import UpdateProfile from "./UpdateProfile";
@@ -6,6 +8,12 @@ import { Link } from "@reach/router";
 
 const Profile = () => {
   const [state, setState] = useState("playBingo");
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCardNumber());
+  }, [dispatch]);
 
   return (
     <div className="bg-gray-800 text-white pt-5 pb-32">
