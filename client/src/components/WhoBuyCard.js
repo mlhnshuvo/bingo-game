@@ -31,22 +31,27 @@ const WhoBuyCard = () => {
               <p>CPF: {el.authorId.cpf}</p>
             </div>
             {el.card.map((car) => (
-              <div
-                key={car.id}
-                className="flex flex-wrap my-2 w-auto sm:w-72 m-auto"
-              >
-                {car.number.map((num) => (
-                  <p
-                    className={
-                      num
-                        ? "bg-white font-bold border border-gray-900 w-8 h-8 text-black p-1"
-                        : "bg-gray-400 font-bold border border-gray-900 w-8 h-8 text-black p-1"
-                    }
-                    key={num}
-                  >
-                    {num}
-                  </p>
-                ))}
+              <div>
+                <div
+                  key={car.id}
+                  className="flex flex-wrap my-2 w-auto sm:w-72 m-auto"
+                >
+                  {car.number.map((num) => (
+                    <p
+                      className={
+                        num
+                          ? "bg-white font-bold border border-gray-900 w-8 h-8 text-black p-1"
+                          : "bg-gray-400 font-bold border border-gray-900 w-8 h-8 text-black p-1"
+                      }
+                      key={num}
+                    >
+                      {num}
+                    </p>
+                  ))}
+                </div>
+                <p className="bg-yellow-500 rounded text-center mt-1  w-auto sm:w-72 m-auto">
+                  Price: {car.price}
+                </p>
               </div>
             ))}
           </div>

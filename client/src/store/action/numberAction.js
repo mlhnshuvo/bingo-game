@@ -48,3 +48,20 @@ export const addNumber = (number) => (dispatch) => {
       });
     });
 };
+
+export const addPrice = (id, price) => (dispatch) => {
+  axios
+    .put("/number/addprice/" + id, price)
+    .then((response) => {
+      dispatch({
+        type: Types.CARD_NUMBER_ADD_PRICE,
+        payload: response.data,
+      });
+    })
+    .catch((err) => {
+      dispatch({
+        type: Types.CARD_NUMBER_ADD_PRICE_ERROR,
+        payload: err.data,
+      });
+    });
+};

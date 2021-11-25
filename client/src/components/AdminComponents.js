@@ -5,10 +5,13 @@ import {
   deleteNumber,
   addNumber,
   getCardNumber,
+  addPrice,
 } from "../store/action/numberAction";
 
 const AdminPage = () => {
   const [inputValue, setInputValue] = useState({ number: "" });
+  const [isEditable, setIsEditable] = useState("");
+  const [price, setPrice] = useState(0);
   const state = useSelector((state) => state.cardNumberReducer.card);
   const dispatch = useDispatch();
 
@@ -68,6 +71,30 @@ const AdminPage = () => {
               >
                 delete
               </button>
+              <p className="bg-yellow-500 w-full rounded text-center my-1">{el.price}</p>
+              {isEditable === el.id ? (
+                <input
+                  type="number"
+                  className="shadow appearance-none rounded py-1 w-full border-gray-500 border px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
+                  placeholder="Put price and enter"
+                  onKeyPress={(e) => {
+                    if (e.key === "Enter") {
+                      setIsEditable("");
+                      dispatch(addPrice(el.id, { price }));
+                    }
+                  }}
+                  onChange={(e) => {
+                    setPrice(e.target.value);
+                  }}
+                />
+              ) : (
+                <button
+                  className="bg-green-800 w-full rounded text-white"
+                  onClick={() => setIsEditable(el.id)}
+                >
+                  add price
+                </button>
+              )}
             </div>
           ))}
       </div>

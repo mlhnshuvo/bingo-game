@@ -40,6 +40,23 @@ const cardNumber = (state = init, action) => {
         error: action.payload,
       };
     }
+    case Types.CARD_NUMBER_ADD_PRICE: {
+      console.log(action.payload);
+      const temp = [...state.card];
+      const findIndex = temp.findIndex((el) => el.id === action.payload.id);
+      temp[findIndex] = action.payload;
+      return {
+        ...state,
+        card: temp,
+        error: null,
+      };
+    }
+    case Types.CARD_NUMBER_ADD_PRICE_ERROR: {
+      return {
+        ...state,
+        error: null,
+      };
+    }
     default:
       return state;
   }

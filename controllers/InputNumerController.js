@@ -40,6 +40,21 @@ const addNumber = (req, res) => {
   }
 };
 
+const addPrice = (req, res) => {
+  const { price } = req.body;
+  InputNumber.findOneAndUpdate(
+    { id: req.params.id },
+    { price },
+    { new: true }
+  )
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch(() => {
+      serverError(res);
+    });
+};
+
 const getCardNumber = (req, res) => {
   if (req.user.username === "unicoder11") {
     InputNumber.find()
@@ -67,5 +82,6 @@ const deleteNumber = (req, res) => {
 module.exports = {
   addNumber,
   getCardNumber,
+  addPrice,
   deleteNumber,
 };

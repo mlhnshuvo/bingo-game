@@ -11,6 +11,7 @@ const cardSchema = new Schema(
       {
         id: String,
         number: [],
+        price: Number,
         _id: false,
       }
     ],

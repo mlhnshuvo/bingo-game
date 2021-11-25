@@ -9,6 +9,7 @@ const numberSchema = new Schema(
       default: false,
     },
     number: [],
+    price: Number
   },
   {
     timestamps: true,
