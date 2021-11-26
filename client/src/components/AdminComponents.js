@@ -71,7 +71,7 @@ const AdminPage = () => {
               >
                 delete
               </button>
-              <p className="bg-yellow-500 w-full rounded text-center my-1">{el.price}</p>
+              <p className="bg-yellow-500 w-full rounded text-center my-1">Price: {el.price}</p>
               {isEditable === el.id ? (
                 <input
                   type="number"
